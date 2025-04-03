@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 35px;
+}
+
+.menu ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.menu a{
+    text-decoration: none;
+    color: black;
+}
+
+.menu li{
+    margin-left: 1em;
+    font-size: 1.5em;
+}
+
+#productos {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos pasen a otra línea si no caben */
+    gap: 20px; /* Espaciado entre productos */
+    justify-content: center; /* Centra los elementos */
+}
+
+#productos2 {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos pasen a otra línea si no caben */
+    gap: 20px; /* Espaciado entre productos */
+    justify-content: center; /* Centra los elementos */
+}
+
+h1{
+    text-align: center;
+    margin-top: 3em;
+}
+
+.producto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+.producto img {
+    width: 250px;
+    height: 250px;
+    border-radius: 5px;
+}
+
+footer{
+    background-color: black;
+    width: 100%;
+    color: white;
+    padding: 20px 0;
+}
+
+.col1{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+} 
+
+.redes{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+} 
+
+.redes a img{
+    height: 30px;
+    margin-right: 15px;
+}
+
+.presentation p{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.contact{
+    text-align: center;
+}
