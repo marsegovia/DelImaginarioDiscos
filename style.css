@@ -49,8 +49,8 @@ header{
     gap: 20px; /* Espaciado entre productos */
     justify-content: center; /* Centra los elementos */
     align-items: center;
-    margin-left: 120px;
-    margin-right: 120px;
+    margin-left: 110px;
+    margin-right: 110px;
 }
 
 h1{
