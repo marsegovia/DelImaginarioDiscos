@@ -27,6 +27,12 @@ header{
 .menu li{
     margin-left: 1em;
     font-size: 1.5em;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.menu a:hover{
+    color: gray;
 }
 
 #productos {
@@ -34,6 +40,25 @@ header{
     flex-wrap: wrap; /* Permite que los elementos pasen a otra línea si no caben */
     gap: 20px; /* Espaciado entre productos */
     justify-content: center; /* Centra los elementos */
+    align-items: center;
+}
+
+p{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-align: center;
+    width: 250px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    margin: 5px auto 0; /* centrar y dar espacio arriba */
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.producto img{
+    box-sizing: border-box;
+    border: solid 1px black;
 }
 
 #productos2 {
@@ -55,7 +80,9 @@ header{
 
 h1{
     text-align: center;
-    margin-top: 3em;
+    margin-top: 1em;
+    font-size: 60px;
+    font-family: medieval;
 }
 
 .producto {
@@ -86,6 +113,12 @@ footer{
     align-items: center;
 } 
 
+.col1 h3{
+    font-family: medieval;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
 .redes{
     margin-left: 20px;
     display: flex;
@@ -95,18 +128,75 @@ footer{
 .redes a img{
     height: 30px;
     margin-right: 15px;
+    margin-bottom: 20px;
 }
 
-.presentation p{
+.presentation {
     display: flex;
-    flex-wrap: nowrap;
     justify-content: center;
     text-align: center;
 }
 
-.contact{
-    text-align: center;
+.presentation p{
+    width: 100%;
+    font-style: italic;
 }
+
+.contact p{
+    text-align: center;
+    font-size: 20px;
+    width: 100%;
+    margin-bottom: -1px;
+}
+
+@font-face {
+    font-family: medieval;
+    src: url('./Devans.otf');
+}
+
+/* carousel */
+.carousel {
+    position: relative;
+    width: 850px;
+    height: 500px;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-bottom: -100px;
+    margin-top: 60px;
+  }
+  
+  .slides {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .slides img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .prev, .next {
+    position: absolute;
+    top: 35%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  .prev {
+    left: 10px;
+  }
+  .next {
+    right: 10px;
+  }
+  
 
 /* Responsive */
 
@@ -120,6 +210,7 @@ footer{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        align-items: center;
         margin-top: 35px;
     }
     
@@ -164,5 +255,30 @@ footer{
         margin-left: 20px;
         margin-right: 20px;
     }
+
+    /* carousel */
+.carousel {
+    position: relative;
+    width: 380px;
+    height: 400px;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-bottom: -250px;
+    margin-top: 20px;
+  }
+  
+  .prev, .next {
+    top: 20%;
+    font-size: 1rem;
+    padding: 3px 7px;
+  }
+  
+  .prev {
+    left: 8px;
+  }
+  .next {
+    right: 8px;
+  }
+  
     
 }
