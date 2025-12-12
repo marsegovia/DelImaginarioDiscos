@@ -1,53 +1,41 @@
-// === OBTENER PRODUCTOS DESDE EL BACKEND ===
-fetch("http://localhost:3000/products") 
-  .then(response => response.json())
-  .then(data => {
-    const contenedor = document.getElementById("productos3");
-    contenedor.innerHTML = "";
+async function cargarProductos() {
+    try {
+        const response = await fetch("http://localhost:3000/products");
+        const data = await response.json();
 
-    data.forEach(producto => {
-      const div = document.createElement("div");
-      div.classList.add("producto");
+        console.log("Productos recibidos:", data);
 
-      const img = document.createElement("img");
-      img.src = producto.imagen;
-      img.alt = producto.nombre;
+        const contenedor = document.getElementById("productos2");
+        contenedor.innerHTML = ""; // Limpia el contenedor
 
-      const nombre = document.createElement("p");
-      nombre.textContent = producto.nombre;
+        data.forEach(producto => {
+            const div = document.createElement("div");
+            div.classList.add("producto");
 
-      div.appendChild(img);
-      div.appendChild(nombre);
+            // Imagen
+            const img = document.createElement("img");
+            img.src = producto.imagen || "./images/default.png"; 
+            img.alt = producto.Album;
 
-      contenedor.appendChild(div);
-    });
-  })
-  .catch(error => console.error("Error cargando los productos:", error));
+            // Nombre
+            const nombre = document.createElement("p");
+            nombre.textContent = `${producto.Banda} - ${producto.Album}`;
 
+            // Precio
+            const precio = document.createElement("p");
+            precio.textContent = `$${producto.Precio}`;
 
-// === SLIDER / CARRUSEL (si lo usás en otras páginas) ===
+            // Render
+            div.appendChild(img);
+            div.appendChild(nombre);
+            div.appendChild(precio);
 
-const slides = document.querySelector('.slides');
-if (slides) {
-  const totalSlides = document.querySelectorAll('.slides img').length;
-  let index = 0;
+            contenedor.appendChild(div);
+        });
 
-  function showSlide(i) {
-    slides.style.transform = `translateX(-${i * 100}%)`;
-  }
-
-  document.querySelector('.next').addEventListener('click', () => {
-    index = (index + 1) % totalSlides;
-    showSlide(index);
-  });
-
-  document.querySelector('.prev').addEventListener('click', () => {
-    index = (index - 1 + totalSlides) % totalSlides;
-    showSlide(index);
-  });
-
-  setInterval(() => {
-    index = (index + 1) % totalSlides;
-    showSlide(index);
-  }, 5000);
+    } catch (error) {
+        console.error("Error cargando productos:", error);
+    }
 }
+
+cargarProductos();

@@ -1,62 +1,22 @@
-import {//actualizarProducto, 
-        agregarProducto, 
-        eliminarProducto, obtenerProducto, obtenerProductos} from "../Models/products.models.js";
+import { 
+  agregarProducto, 
+  eliminarProducto, 
+  obtenerProducto, 
+  obtenerProductos 
+} from "../Models/products.models.js";
 
 export const addProductService = async (product) => {
-  return(
-    new Promise(async (res, rej) => {
-      try{
-        const newProduct = await agregarProducto(product)
-        res(newProduct)
-      }catch(error){
-        rej(error)
-      }
-    })
-  )
-
-}
-
-export const deleteProductService = async (id) => {
-  return eliminarProducto(id);
+  return await agregarProducto(product);
 };
 
-
-export const editProductService = async (id, product) => {
-  return(
-    new Promise(async (res, rej) => {
-      try{
-        const newProduct = await actualizarProducto(id, product)
-        res(newProduct)
-      }catch(error){
-        rej(error)
-      }
-    })
-  )
-}
+export const deleteProductService = async (id) => {
+  return await eliminarProducto(id);
+};
 
 export const getAllProductsService = async () => {
-  return(
-    new Promise(async (res,rej)=> {
-      console.log("test2 dentro de servicio")
-      try{
-        const productos = await obtenerProductos()
-        res(productos);
-      }catch(error){
-        rej()
-      }
-    })
-  )
+  return await obtenerProductos();
 };
 
 export const getProductByIdService = async (id) => {
-  return(
-    new Promise(async(res, rej) => {
-      try{
-        const product = await obtenerProducto(id)
-        res(product)
-      }catch(error){
-        rej(error)
-      }
-    })
-  )
+  return await obtenerProducto(id);
 };

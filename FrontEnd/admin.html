@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./admin.css">
+    <title>Admin</title>
+</head>
+<body>
+    <h1>Panel de Administración</h1>
+
+    <form id="form-producto">
+
+        <label>Banda</label>
+        <input type="text" id="banda" required>
+
+        <label>Álbum</label>
+        <input type="text" id="album" required>
+
+        <label>Precio</label>
+        <input type="number" id="precio" required>
+
+        <label>Stock</label>
+        <input type="number" id="stock" required>
+
+         <label>Imagen (URL)</label>
+        <input type="text" id="imagen">
+
+        <label>¿Es un lanzamiento nuevo?</label>
+        <input type="checkbox" id="isNew">
+
+        <button type="submit">Agregar Producto</button>
+    </form>
+
+    <p id="mensaje"></p>
+
+    <script src="./admin.js"></script>
+</body>
+</html>
