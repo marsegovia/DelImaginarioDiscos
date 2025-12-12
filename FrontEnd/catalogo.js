@@ -1,41 +1,24 @@
-async function cargarProductos() {
-    try {
-        const response = await fetch("http://localhost:3000/products");
-        const data = await response.json();
+const contenedor = document.getElementById("productos2");
 
-        console.log("Productos recibidos:", data);
+fetch("http://localhost:3000/products")
+  .then(res => res.json())
+  .then(data => {
+    contenedor.innerHTML = "";
 
-        const contenedor = document.getElementById("productos2");
-        contenedor.innerHTML = ""; // Limpia el contenedor
+    data.forEach(p => {
+      const div = document.createElement("div");
+      div.classList.add("producto");
 
-        data.forEach(producto => {
-            const div = document.createElement("div");
-            div.classList.add("producto");
+      div.innerHTML = `
+        <img src="${p.Imagen}" alt="${p.banda} - ${p.album}">
+        <h3>${p.banda} - ${p.album}</h3>
+        <p>$${p.precio}</p>
+      `;
 
-            // Imagen
-            const img = document.createElement("img");
-            img.src = producto.imagen || "./images/default.png"; 
-            img.alt = producto.Album;
-
-            // Nombre
-            const nombre = document.createElement("p");
-            nombre.textContent = `${producto.Banda} - ${producto.Album}`;
-
-            // Precio
-            const precio = document.createElement("p");
-            precio.textContent = `$${producto.Precio}`;
-
-            // Render
-            div.appendChild(img);
-            div.appendChild(nombre);
-            div.appendChild(precio);
-
-            contenedor.appendChild(div);
-        });
-
-    } catch (error) {
-        console.error("Error cargando productos:", error);
-    }
-}
-
-cargarProductos();
+      contenedor.appendChild(div);
+    });
+  })
+  .catch(err => {
+    console.error(err);
+    contenedor.innerHTML = "<p>Error cargando productos</p>";
+  });

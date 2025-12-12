@@ -22,17 +22,29 @@ export const getProductById = async (req, res) => {
 };
 
 export const addProduct = async (req, res) => {
-    try {
-        const product = req.body;
-        const newProduct = await productService.addProductService(product);
-        res.status(201).json(newProduct);
-    } catch (error) {
-        res.status(500).json({
-            message: "Error al agregar el producto",
-            error
-        });
-    }
+  try {
+    console.log("📦 BODY:", req.body);
+    console.log("🖼️ FILE:", req.file);
+
+    const product = {
+      ...req.body,
+      Imagen: req.file.path
+    };
+
+    const newProduct = await productService.addProductService(product);
+
+    res.status(201).json(newProduct);
+  } catch (error) {
+    console.error("🔥 ERROR REAL:", error);
+    res.status(500).json({
+      error: "Error al crear producto",
+      detalle: error.message
+    });
+  }
 };
+
+
+
 
 export const deleteProduct = async (req, res) => {
   const id = req.params.id;

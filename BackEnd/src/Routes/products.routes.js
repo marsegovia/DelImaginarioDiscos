@@ -7,6 +7,7 @@ import {
     getProductById
 } from "../controllers/products.controllers.js"
 //import { authentication } from "../Middlewares/authentication.js"
+import upload from "../Middlewares/uploads.js";
 
 const routes = express.Router()
 
@@ -14,7 +15,7 @@ routes.get("/", getAllProducts)
 
 routes.get("/:id", getProductById)
 
-routes.post("/create", addProduct)
+routes.post("/create", upload.single("image"),addProduct);
 
 routes.delete("/:id", deleteProduct)
 
