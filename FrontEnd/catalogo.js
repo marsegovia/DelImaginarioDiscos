@@ -13,9 +13,22 @@ fetch("http://localhost:3000/products")
         <img src="${p.Imagen}" alt="${p.banda} - ${p.album}">
         <h3>${p.banda} - ${p.album}</h3>
         <p>$${p.precio}</p>
+
+        <button class="ver-mas" data-id="${p.id}">
+          Ver más
+        </button>
+
       `;
 
       contenedor.appendChild(div);
+      
+    });
+   // activar botones
+    document.querySelectorAll(".ver-mas").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const id = btn.dataset.id;
+        window.location.href = `producto.html?id=${id}`;
+      });
     });
   })
   .catch(err => {

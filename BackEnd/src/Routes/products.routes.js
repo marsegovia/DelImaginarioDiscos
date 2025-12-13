@@ -2,7 +2,7 @@ import express from "express"
 import {
     addProduct,
     deleteProduct,
-    //editProduct,
+    editProduct,
     getAllProducts,
     getProductById
 } from "../controllers/products.controllers.js"
@@ -19,9 +19,7 @@ routes.post("/create", upload.single("image"),addProduct);
 
 routes.delete("/:id", deleteProduct)
 
-//routes.put("/products/:id", editProduct)
-
-//routes.post("/products", )
+routes.put("/:id", upload.single("image"), editProduct);
 
 
 export default routes;

@@ -26,6 +26,12 @@ export const addProduct = async (req, res) => {
     console.log("📦 BODY:", req.body);
     console.log("🖼️ FILE:", req.file);
 
+    const capitalize = (text) => {
+      if (!text) return "";
+      return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+    };
+
+
     const product = {
       ...req.body,
       Imagen: req.file.path
@@ -43,6 +49,37 @@ export const addProduct = async (req, res) => {
   }
 };
 
+export const editProduct = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const updatedData = {
+      banda: capitalizeWords(req.body.banda),
+      album: capitalizeWords(req.body.album),
+      pais: capitalizeWords(req.body.pais),
+      estilo: capitalizeWords(req.body.estilo),
+      sello: capitalizeWords(req.body.sello),
+      precio: Number(req.body.precio),
+      stock: Number(req.body.stock),
+      updatedAt: new Date()
+    };
+
+    // Si viene nueva imagen, la reemplazamos
+    if (req.file) {
+      updatedData.Imagen = req.file.path;
+    }
+
+    const product = await productService.editProductService(id, updatedData);
+
+    res.status(200).json({
+      message: "Producto actualizado",
+      product
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Error al editar producto" });
+  }
+};
 
 
 

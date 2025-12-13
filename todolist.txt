@@ -1,0 +1,7 @@
+COSAS POR HACER
+
+1. Funciones editar y borrar prod
+2. filtrar prod por orden de subida
+3. Crear un buscador
+4. agregar admin login
+5. ver temas de ubicacion y disenio

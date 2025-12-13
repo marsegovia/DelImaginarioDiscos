@@ -20,3 +20,7 @@ export const getAllProductsService = async () => {
 export const getProductByIdService = async (id) => {
   return await obtenerProducto(id);
 };
+
+export const editProductService = async (id, data) => {
+  return actualizarProducto(id, data);
+};

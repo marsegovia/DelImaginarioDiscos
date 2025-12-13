@@ -98,11 +98,27 @@ h1{
     border-radius: 5px;
 }
 
+
+.ver-mas{
+    border-radius: 10px;
+    height: 30px;
+    width: 200px;
+    font-size: 16px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.ver-mas:hover{
+    background-color: gray;
+}
+
 footer{
     background-color: black;
     width: 100%;
     color: white;
     padding: 20px 0;
+    margin-top: 50px;
 }
 
 .col1{

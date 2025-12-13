@@ -30,9 +30,12 @@ export async function agregarProducto(producto) {
 }
 
 export async function actualizarProducto(id, producto) {
-  await updateDoc(doc(db, "products", id), producto);
+  await updateDoc(doc(db, "products", id), {
+    ...producto
+  });
   return { id, ...producto };
 }
+
 
 export async function eliminarProducto(id) {
   await deleteDoc(doc(db, "products", id));

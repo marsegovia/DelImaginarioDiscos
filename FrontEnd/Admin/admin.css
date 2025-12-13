@@ -1,0 +1,121 @@
+.barAdmin{
+    display: flex;
+    text-align: center;
+    background-color:black;
+    height: 45px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#admin-bar button{
+    margin-left: 100px;
+    background-color: white;
+    height: 30px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+#admin-bar button:hover{
+    background-color: gray;
+}
+
+.admin-view{
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 420px 10px 420px;
+    padding: 40px;
+    background-color: #1e1f22;
+    border-radius: 30px;
+}
+
+#formProducto{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+#formProducto input{
+    border-radius: 20px;
+    height: 20px;
+    margin-top: 15px;
+}
+
+#formProducto label{
+    border-radius: 20px;
+    height: 20px;
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+
+#formProducto button{
+   margin-top: 30px;
+   border-radius: 20px;
+   height: 30px;
+   background-color: red;
+   border: 1px solid red;
+   color: white;
+   font-size: 18px;
+   cursor: pointer;
+}
+
+#formProducto button:hover{
+    background-color: white;
+    border: 1px solid white;
+    color: black;
+    transition: 0.2s;
+}
+
+
+
+.admin-view2{
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 250px 10px 250px;
+    padding: 20px;
+    background-color: white;
+}
+
+.products-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+.products-table th,
+.products-table td {
+  padding: 12px;
+  border-bottom: 0.1px solid black;
+  text-align: left;
+}
+
+.products-table th {
+  color: black;
+  font-size: 14px;
+}
+
+.products-table img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.actions button {
+  margin-right: 6px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-edit {
+  background: #3b82f6;
+}
+
+.btn-delete {
+  background: #ef4444;
+}

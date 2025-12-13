@@ -4,9 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./Admin/admin.css">
     <title>DelImaginarioWeb</title>
 </head>
 <body>
+    <!-- ADMIN BAR -->
+    <section class="barAdmin" >
+        <nav id="admin-bar" style="display:none">
+        <button type="button" data-view="add">➕ Agregar producto</button>
+        <button type="button" data-view="list">📦 Productos</button>
+        <button type="button" id="logout">Salir</button>
+
+    </nav>
+    </section>
+
     <header>
         <a href="./index.html"><img src="./images/logochico.png" alt=""></a>
 
@@ -41,6 +52,67 @@
         <script src="./catalogo.js"></script>
     </section>
 
+    <!-- ADMIN VIEWS -->
+    <section id="admin-add" class="admin-view" style="display:none">
+        <h2>➕ Agregar producto</h2>
+
+        <form id="formProducto" enctype="multipart/form-data">
+
+        <label>Banda</label>
+        <input type="text" name="banda" required>
+
+        <label>Álbum</label>
+        <input type="text" name="album" required>
+
+        <label>Precio</label>
+        <input type="number" name="precio" required>
+
+        <label>Stock</label>
+        <input type="number" name="stock" required>
+
+        <label>País</label>
+        <input type="text" name="pais" required>
+
+        <label>Estilo</label>
+        <input type="text" name="estilo" required>
+
+        <label>Sello</label>
+        <input type="text" name="sello" required>
+
+        <label>Imagen</label>
+        <input type="file" name="image" accept="image/*" required>
+
+        <button type="submit">Guardar producto</button>
+    </form>
+
+    <p id="admin-msg"></p>
+
+    </section>
+
+    <section id="admin-list" class="admin-view2" style="display:none">
+     <h2>Productos</h2>
+
+  <input type="text" id="search" placeholder="Buscar producto..."/>
+
+  <table class="products-table">
+    <thead>
+      <tr>
+        <th>Imagen</th>
+        <th>Banda</th>
+        <th>Álbum</th>
+        <th>Precio</th>
+        <th>Stock</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+
+    <tbody id="productsBody">
+      <!-- productos -->
+    </tbody>
+  </table>
+    </section>
+
+
     <footer>
         <div class="presentation">
             <p>Sello independiente especializado en Heavy Metal y todas sus variantes, con el pensamiento de editar artistas internacionales tanto consagrados como emergentes. <br>
@@ -61,6 +133,10 @@
             <p>Contacto: info@delimaginario.com.ar</p>
         </div>
     </footer>
+    <script src="./Admin/admin-auth.js"></script>
+    <script src="./Admin/admin-bar.js"></script>
+    <script src="./Admin/admin-form.js"></script>
+    <script src="./Admin/admin-list.js"></script>
     <script src="./funciones.js"></script>
 </body>
 </html>
