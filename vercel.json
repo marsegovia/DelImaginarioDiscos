@@ -6,11 +6,11 @@
   ],
   "routes": [
     {
-      "src": "/api/(.*)", 
+      "src": "/api/(.*)",
       "dest": "/index.js"
     },
     {
-      "src": "/(.*)", 
+      "src": "/(.*)",
       "dest": "/FrontEnd/$1"
     }
   ]
