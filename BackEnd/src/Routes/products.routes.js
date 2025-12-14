@@ -5,8 +5,8 @@ import {
     editProduct,
     getAllProducts,
     getProductById
-} from "../controllers/products.controllers.js"
-//import { authentication } from "../Middlewares/authentication.js"
+} from "../Controllers/products.controllers.js"
+import { authAdmin } from "../Middlewares/authAdmin.js";
 import upload from "../Middlewares/uploads.js";
 
 const routes = express.Router()
@@ -17,9 +17,9 @@ routes.get("/:id", getProductById)
 
 routes.post("/create", upload.single("image"),addProduct);
 
-routes.delete("/:id", deleteProduct)
+routes.delete("/:id",authAdmin, deleteProduct)
 
-routes.put("/:id", upload.single("image"), editProduct);
+routes.put("/:id",authAdmin, upload.single("image"), editProduct);
 
 
 export default routes;

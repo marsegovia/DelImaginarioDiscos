@@ -2,13 +2,19 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import productRoutes from "./src/Routes/products.routes.js";
-//import authRouter from './Src/Routes/auth.routes.js';
+import authRouter from './src/Routes/auth.routes.js';
+import path from "path";
+import { fileURLToPath } from "url";
 //import { authentication } from './Src/Middlewares/authentication.js'
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Necesario para usar __dirname con ES Modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const corsConfig = {
     origin: '*',
@@ -28,7 +34,16 @@ app.use((req, res, next) => {
     next();
 });
 
-//app.use('/auth', authRouter);
+
+// Servir carpeta FrontEnd
+app.use(express.static(path.join(__dirname, '../FrontEnd')));
+app.use(express.static(path.join(__dirname, '../Public')));
+
+app.get('/Admin-panel', (req,res) => {
+    res.sendFile(path.join(__dirname, '../Public','index.html'));
+});
+
+app.use('/', authRouter);
 app.use("/products", productRoutes);
 
 app.use((req, res) => {
