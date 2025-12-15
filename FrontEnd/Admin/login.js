@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Guardamos que es admin para mostrar nav
         localStorage.setItem("isAdmin", "true");
+        localStorage.setItem("adminToken", data.token);
 
         // Redirigir al index
         setTimeout(() => {
