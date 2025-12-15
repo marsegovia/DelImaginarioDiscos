@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function cargarProductosAdmin() {
     try {
-      const res = await fetch("http://localhost:3000/products");
+      const res = await fetch("https://delimaginariodiscos.onrender.com/products");
       const data = await res.json();
 
       tbody.innerHTML = "";

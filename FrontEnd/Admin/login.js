@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       try {
         console.log("Enviando fetch a /Admin-panel con:", { email, password });
-        const res = await fetch("http://localhost:3000/Admin-panel", {
+        const res = await fetch("https://delimaginariodiscos.onrender.com/Admin-panel", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email, password })
