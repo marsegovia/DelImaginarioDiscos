@@ -1,10 +1,11 @@
 .barAdmin{
-    display: none;
+    display: flex;
     text-align: center;
     height: 45px;
     text-align: center;
     justify-content: center;
     align-items: center;
+    background-color:black;
 }
 
 #admin-bar button{
@@ -13,7 +14,6 @@
     height: 30px;
     border: 1px solid black;
     cursor: pointer;
-    background-color:black;
 }
 
 #admin-bar button:hover{
