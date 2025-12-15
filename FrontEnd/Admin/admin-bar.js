@@ -1,11 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("admin-bar.js cargado");
 
-  const isAdmin = localStorage.getItem("isAdmin") === "true";
-  const adminBar = document.getElementById("admin-bar");
+  const barAdmin = document.querySelector(".barAdmin");
+const isAdmin = localStorage.getItem("isAdmin") === "true";
 
-  // Mostrar barra de admin si es admin
-  if (isAdmin && adminBar) adminBar.style.display = "flex";
+if (isAdmin && barAdmin) {
+  barAdmin.style.display = "flex"; // muestra toda la barra
+}
 
   // Función para cargar productos en la tabla
   async function cargarProductosAdmin() {

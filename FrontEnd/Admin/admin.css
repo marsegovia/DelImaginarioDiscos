@@ -1,7 +1,6 @@
 .barAdmin{
-    display: flex;
+    display: none;
     text-align: center;
-    background-color:black;
     height: 45px;
     text-align: center;
     justify-content: center;
@@ -14,6 +13,7 @@
     height: 30px;
     border: 1px solid black;
     cursor: pointer;
+    background-color:black;
 }
 
 #admin-bar button:hover{
