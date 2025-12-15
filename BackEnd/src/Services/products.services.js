@@ -3,7 +3,7 @@ import {
   eliminarProducto, 
   obtenerProducto, 
   obtenerProductos 
-} from "../Models/products.models.js";
+} from "../models/products.models.js";
 
 export const addProductService = async (product) => {
   return await agregarProducto(product);

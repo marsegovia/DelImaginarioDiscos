@@ -1,4 +1,4 @@
-import { db } from "../Data/data.js";
+import { db } from "../data/data.js";
 import { 
   doc, getDoc, collection, getDocs, 
   addDoc, updateDoc, deleteDoc
