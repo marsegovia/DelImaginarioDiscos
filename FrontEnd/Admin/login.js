@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       try {
         console.log("Enviando fetch a /Admin-panel con:", { email, password });
-        const res = await fetch("https://delimaginariodiscos.onrender.com/Admin-panel", {
+        const res = await fetch("https://delimaginariodiscos.onrender.com/login", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email, password })
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Redirigir al index
         setTimeout(() => {
           console.log(localStorage.getItem("isAdmin")) //justo antes de redirigir para verificar que se guardó.
-          window.location.href = "/index.html";
+          window.location.href = "/Admin-panel";
         }, 500);
 
       } catch (error) {

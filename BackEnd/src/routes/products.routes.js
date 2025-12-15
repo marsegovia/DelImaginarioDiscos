@@ -13,9 +13,9 @@ const routes = express.Router()
 
 routes.get("/", getAllProducts)
 
-routes.get("/:id", getProductById)
-
 routes.post("/create", upload.single("image"),addProduct);
+
+routes.get("/:id", getProductById)
 
 routes.delete("/:id",authAdmin, deleteProduct)
 
