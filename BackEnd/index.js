@@ -43,6 +43,11 @@ app.get('/Admin-panel', (req,res) => {
     res.sendFile(path.join(__dirname, '../Public','index.html'));
 });
 
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, '../FrontEnd/Admin/admin.html'));
+});
+
+
 app.use('/', authRouter);
 app.use("/products", productRoutes);
 
