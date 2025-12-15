@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const password = document.getElementById("password").value;
 
       try {
-        console.log("Enviando fetch a /Admin-panel con:", { email, password });
+        console.log("Enviando fetch a /login con:", { email, password });
         const res = await fetch("https://delimaginariodiscos.onrender.com/login", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
