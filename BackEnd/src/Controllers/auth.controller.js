@@ -1,5 +1,5 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../Data/data.js"; // 👈 ESTO FALTABA
+import { auth } from "../data/data.js"; // 👈 ESTO FALTABA
 
 export const login = async (req, res) => {
   const { email, password } = req.body;

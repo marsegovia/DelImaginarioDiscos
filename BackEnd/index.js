@@ -1,8 +1,8 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import productRoutes from "./src/Routes/products.routes.js";
-import authRouter from './src/Routes/auth.routes.js';
+import productRoutes from "./src/routes/products.routes.js";
+import authRouter from './src/routes/auth.routes.js';
 import path from "path";
 import { fileURLToPath } from "url";
 //import { authentication } from './Src/Middlewares/authentication.js'

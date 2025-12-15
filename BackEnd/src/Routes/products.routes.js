@@ -5,9 +5,9 @@ import {
     editProduct,
     getAllProducts,
     getProductById
-} from "../Controllers/products.controllers.js"
-import { authAdmin } from "../Middlewares/authAdmin.js";
-import upload from "../Middlewares/uploads.js";
+} from "../controllers/products.controllers.js"
+import { authAdmin } from "../middlewares/authAdmin.js";
+import upload from "../middlewares/uploads.js";
 
 const routes = express.Router()
 
