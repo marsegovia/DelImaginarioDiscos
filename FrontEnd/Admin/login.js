@@ -68,12 +68,12 @@ document.addEventListener("DOMContentLoaded", () => {
       if (viewEl) viewEl.style.display = "block";
     });
   });
-
+*/
   // Logout
   if (logoutBtn) {
     logoutBtn.addEventListener("click", () => {
       localStorage.removeItem("isAdmin");
       window.location.href = "/index.html";
     });
-  } */
+  } 
 });
