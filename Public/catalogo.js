@@ -1,6 +1,6 @@
 const contenedor = document.getElementById("productos2");
 
-fetch("https://delimaginariodiscos.onrender.com/products")
+fetch("http://localhost:3000/products")
   .then(res => res.json())
   .then(data => {
     contenedor.innerHTML = "";

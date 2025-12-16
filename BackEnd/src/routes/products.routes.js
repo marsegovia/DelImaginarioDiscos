@@ -17,9 +17,9 @@ routes.post("/create", upload.single("image"),addProduct);
 
 routes.get("/:id", getProductById)
 
-routes.delete("/:id",authAdmin, deleteProduct)
+routes.delete("/:id", deleteProduct);
 
-routes.put("/:id",authAdmin, upload.single("image"), editProduct);
+routes.put("/:id", upload.single("image"), editProduct);
 
 
 export default routes;

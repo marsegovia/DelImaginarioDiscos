@@ -1,0 +1,107 @@
+/* RESET BÁSICO */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+/* FONDO GENERAL */
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #111 0%, #000 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #eaeaea;
+}
+
+/* CONTENEDOR */
+.edit-container {
+  width: 100%;
+  max-width: 480px;
+  background: #0d0d0d;
+  padding: 32px;
+  border-radius: 12px;
+
+  /* línea + sombra sutil */
+  box-shadow:
+    0 0 0 1px rgba(212, 175, 55, 0.15),
+    0 12px 40px rgba(0, 0, 0, 0.9);
+}
+
+/* TÍTULO */
+.edit-container h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #d4af37; /* dorado */
+}
+
+/* FORM */
+#editForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* INPUTS */
+#editForm input[type="text"],
+#editForm input[type="number"],
+#editForm input[type="file"] {
+  width: 100%;
+  padding: 12px 14px;
+  background: #121212;
+  border: 1px solid #222;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* PLACEHOLDER */
+#editForm input::placeholder {
+  color: #777;
+}
+
+/* FOCUS */
+#editForm input:focus {
+  outline: none;
+  border-color: #d4af37;
+  box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.4);
+}
+
+/* BOTÓN */
+#editForm button {
+  margin-top: 12px;
+  padding: 12px;
+  background: linear-gradient(135deg, #d4af37, #b8962e);
+  color: #000;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* HOVER BOTÓN */
+#editForm button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.35);
+}
+
+/* MENSAJE */
+#msg {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* ESTADOS */
+#msg.success {
+  color: #7cff9a;
+}
+
+#msg.error {
+  color: #ff6b6b;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./admin.css">
+    <title>Document</title>
+</head>
+<body>
+  <section id="admin-list" class="admin-view2" >
+   <input type="text" id="search" placeholder="Buscar producto..."/>
+  <table class="products-table">
+    <thead>
+      <tr>
+        <th>Imagen</th>
+        <th>Banda</th>
+        <th>Álbum</th>
+        <th>Precio</th>
+        <th>Stock</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+
+    <tbody id="productsBody">
+      <!-- productos -->
+    </tbody>
+  </table>
+    </section>
+</body>
+
+<script src="../Admin/admin-bar.js"></script>
+
+<script>
+const tbody = document.getElementById("productsBody");
+
+tbody.addEventListener("click", async (e) => {
+  const btn = e.target;
+  const id = btn.dataset.id;
+  const token = localStorage.getItem("adminToken");
+
+  if (!id || !token) return;
+
+  if (btn.classList.contains("btn-edit")) {
+  window.location.href = `/admin-edit.html?id=${id}`;
+}
+
+  // BORRAR
+  if (btn.classList.contains("btn-delete")) {
+    if (!confirm("¿Seguro que querés eliminar este producto?")) return;
+
+    try {
+      const res = await fetch(`http://localhost:3000/products/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Authorization": "Bearer " + token
+        }
+      });
+
+      if (!res.ok) throw new Error("Error al eliminar producto");
+
+      // refrescamos lista
+      btn.closest("tr").remove();
+
+    } catch (err) {
+      alert(err.message);
+    }
+  }
+});
+  </script>
+</html>

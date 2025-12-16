@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="/Admin/admin.css">
+    <link rel="stylesheet" href="../FrontEnd/Admin/admin.css">
     <title>DelImaginarioWeb</title>
 </head>
 <body>
     <!-- ADMIN BAR -->
-        <nav id="admin-bar" style="display:none">
+        <nav id="admin-bar">
         <button type="button" data-view="add">➕ Agregar producto</button>
         <button type="button" data-view="list">📦 Productos</button>
         <button type="button" id="logout">Salir</button>
@@ -51,64 +51,24 @@
     </section>
 
     <!-- ADMIN VIEWS -->
-    <section id="admin-add" class="admin-view" style="display:none">
-        <h2>➕ Agregar producto</h2>
-
-        <form id="formProducto" enctype="multipart/form-data">
-
-        <label>Banda</label>
-        <input type="text" name="banda" required>
-
-        <label>Álbum</label>
-        <input type="text" name="album" required>
-
-        <label>Precio</label>
-        <input type="number" name="precio" required>
-
-        <label>Stock</label>
-        <input type="number" name="stock" required>
-
-        <label>País</label>
-        <input type="text" name="pais" required>
-
-        <label>Estilo</label>
-        <input type="text" name="estilo" required>
-
-        <label>Sello</label>
-        <input type="text" name="sello" required>
-
-        <label>Imagen</label>
-        <input type="file" name="image" accept="image/*" required>
-
-        <button type="submit">Guardar producto</button>
+    <!-- Modal de agregar producto -->
+<div id="modalProducto" class="modal">
+  <div class="modal-content">
+    <span id="closeModal" class="close">&times;</span>
+    <h2>Agregar Producto</h2>
+    <form id="formProducto" enctype="multipart/form-data">
+      <input type="text" name="banda" placeholder="Banda" required>
+      <input type="text" name="album" placeholder="Álbum" required>
+      <input type="text" name="pais" placeholder="País">
+      <input type="text" name="estilo" placeholder="Estilo">
+      <input type="text" name="sello" placeholder="Sello">
+      <input type="number" name="precio" placeholder="Precio" required>
+      <input type="file" name="image" accept="image/*">
+      <button type="submit">Guardar Producto</button>
     </form>
-
     <p id="admin-msg"></p>
-
-    </section>
-
-    <section id="admin-list" class="admin-view2" style="display:none">
-     <h2>Productos</h2>
-
-  <input type="text" id="search" placeholder="Buscar producto..."/>
-
-  <table class="products-table">
-    <thead>
-      <tr>
-        <th>Imagen</th>
-        <th>Banda</th>
-        <th>Álbum</th>
-        <th>Precio</th>
-        <th>Stock</th>
-        <th>Acciones</th>
-      </tr>
-    </thead>
-
-    <tbody id="productsBody">
-      <!-- productos -->
-    </tbody>
-  </table>
-    </section>
+  </div>
+</div>
 
 
     <footer>
