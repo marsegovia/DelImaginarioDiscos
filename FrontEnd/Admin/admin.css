@@ -1,5 +1,5 @@
 #admin-bar {
-    display: flex; /* Se sobreescribe por JS si está oculto */
+    display: none; /* Se sobreescribe por JS si está oculto */
     justify-content: center;
     align-items: center;
     height: 45px;

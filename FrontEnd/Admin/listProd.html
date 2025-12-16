@@ -28,7 +28,7 @@
     </section>
 </body>
 
-<script src="../Admin/admin-bar.js"></script>
+<script src="./admin-bar.js"></script>
 
 <script>
 const tbody = document.getElementById("productsBody");
@@ -49,7 +49,7 @@ tbody.addEventListener("click", async (e) => {
     if (!confirm("¿Seguro que querés eliminar este producto?")) return;
 
     try {
-      const res = await fetch(`http://localhost:3000/products/${id}`, {
+      const res = await fetch(`https://delimaginariodiscos.onrender.com/${id}`, {
         method: "DELETE",
         headers: {
           "Authorization": "Bearer " + token
