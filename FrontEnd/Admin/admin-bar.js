@@ -13,8 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!tbody) return;
 
     try {
-      //const res = await fetch("https://delimaginariodiscos.onrender.com/products");
-      const res = await fetch("http://localhost:3000/products");
+      const res = await fetch("https://delimaginariodiscos.onrender.com/products");
       const data = await res.json();
 
       tbody.innerHTML = "";
@@ -99,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const token = localStorage.getItem("adminToken");
         if (!token) throw new Error("No token");
 
-        const res = await fetch("http://localhost:3000/products/create", {
+        const res = await fetch("https://delimaginariodiscos.onrender.com/products/create", {
           method: "POST",
           headers: { "Authorization": "Bearer " + token },
           body: formData

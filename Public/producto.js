@@ -3,7 +3,7 @@ const contenedor = document.getElementById("producto-detalle");
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 
-fetch(`http://localhost:3000/products/${id}`)
+fetch(`https://delimaginariodiscos.onrender.com/products/${id}`)
   .then(res => res.json())
   .then(p => {
     contenedor.innerHTML = `

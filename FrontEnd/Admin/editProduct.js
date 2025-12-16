@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   try {
-    const res = await fetch(`http://localhost:3000/products/${id}`);
+    const res = await fetch(`https://delimaginariodiscos.onrender.com/products/${id}`);
     const product = await res.json();
 
     document.getElementById("banda").value = product.banda || "";
@@ -46,7 +46,7 @@ form.addEventListener("submit", async e => {
   const token = localStorage.getItem("adminToken");
 
   try {
-    const res = await fetch(`http://localhost:3000/products/${id}`, {
+    const res = await fetch(`https://delimaginariodiscos.onrender.com/products/${id}`, {
       method: "PUT",
       headers: {
         "Authorization": "Bearer " + token
