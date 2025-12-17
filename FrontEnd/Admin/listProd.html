@@ -40,22 +40,7 @@
 </script>
 
 <script>
-const tbody = document.getElementById("productsBody");
-
-tbody.addEventListener("click", async (e) => {
-  const btn = e.target;
-  const id = btn.dataset.id;
-  const token = localStorage.getItem("adminToken");
-
-  if (!id || !token) return;
-
-  if (btn.classList.contains("btn-edit")) {
-  window.location.href = `/admin-edit.html?id=${id}`;
-}
-
-  // BORRAR
-  if (btn.classList.contains("btn-delete")) {
-  if (!confirm("¿Seguro que querés eliminar este producto?")) return;
+if (btn.classList.contains("btn-delete")) {
 
   try {
     const res = await fetch(
@@ -78,7 +63,6 @@ tbody.addEventListener("click", async (e) => {
   }
 }
 
-});
 
 function showToast(message, type = "success") {
   const toast = document.getElementById("admin-toast");
