@@ -30,7 +30,14 @@
 <div id="admin-toast" class="admin-toast"></div>
 
 <script src="./admin-bar.js"></script>
-<script src="./editProduct.js"></script>
+
+<script>document.addEventListener("click", e => {
+  if (e.target.classList.contains("btn-edit")) {
+    const id = e.target.dataset.id;
+    window.location.href = `admin-edit.html?id=${id}`;
+  }
+});
+</script>
 
 <script>
 const tbody = document.getElementById("productsBody");
