@@ -49,22 +49,35 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Manejo de botones del nav admin
-  document.querySelectorAll("#admin-bar button[data-view]").forEach(btn => {
-    btn.addEventListener("click", () => {
-      console.log("Botón clickeado:", btn.dataset.view);
-
-      // Ocultar todas las secciones admin
-      document.querySelectorAll(".admin-view").forEach(v => v.style.display = "none");
-
-      // Mostrar la sección seleccionada
-      const viewEl = document.getElementById("admin-" + btn.dataset.view);
-      console.log("Sección a mostrar:", viewEl);
-      if (viewEl) viewEl.style.display = "block";
-
-      // Si es lista de productos, recargar tabla
-      if (btn.dataset.view === "list") cargarProductosAdmin();
-    });
+  // BOTÓN AGREGAR → abre modal
+const btnAdd = document.getElementById("btn-add");
+if (btnAdd) {
+  btnAdd.addEventListener("click", () => {
+    const modal = document.getElementById("modalProducto");
+    if (modal) modal.style.display = "flex";
   });
+}
+
+
+// CERRAR MODAL (click en X)
+const closeModal = document.getElementById("closeModal");
+const modal = document.getElementById("modalProducto");
+
+if (closeModal && modal) {
+  closeModal.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+}
+
+
+// BOTÓN PRODUCTOS → va a otra página
+const btnList = document.getElementById("btn-list");
+if (btnList) {
+  btnList.addEventListener("click", () => {
+    window.location.href = "/Admin/listProd.html";
+  });
+}
+
 
   // Logout
   const logoutBtn = document.getElementById("logout");
