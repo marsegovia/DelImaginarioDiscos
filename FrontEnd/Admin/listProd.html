@@ -27,8 +27,10 @@
   </table>
     </section>
 </body>
+<div id="admin-toast" class="admin-toast"></div>
 
 <script src="./admin-bar.js"></script>
+<script src="./editProduct.js"></script>
 
 <script>
 const tbody = document.getElementById("productsBody");
@@ -46,25 +48,40 @@ tbody.addEventListener("click", async (e) => {
 
   // BORRAR
   if (btn.classList.contains("btn-delete")) {
-    if (!confirm("¿Seguro que querés eliminar este producto?")) return;
+  if (!confirm("¿Seguro que querés eliminar este producto?")) return;
 
-    try {
-      const res = await fetch(`https://delimaginariodiscos.onrender.com/${id}`, {
+  try {
+    const res = await fetch(
+      `https://delimaginariodiscos.onrender.com/products/${id}`,
+      {
         method: "DELETE",
         headers: {
           "Authorization": "Bearer " + token
         }
-      });
+      }
+    );
 
-      if (!res.ok) throw new Error("Error al eliminar producto");
+    if (!res.ok) throw new Error();
 
-      // refrescamos lista
-      btn.closest("tr").remove();
+    btn.closest("tr").remove();
+    showToast("🗑️ Producto eliminado correctamente", "success");
 
-    } catch (err) {
-      alert(err.message);
-    }
+  } catch {
+    showToast("❌ Error al eliminar producto", "error");
   }
+}
+
 });
+
+function showToast(message, type = "success") {
+  const toast = document.getElementById("admin-toast");
+  toast.textContent = message;
+  toast.className = `admin-toast show ${type}`;
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 3000);
+}
+
   </script>
 </html>

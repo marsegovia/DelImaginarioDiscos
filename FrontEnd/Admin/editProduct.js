@@ -1,9 +1,10 @@
 document.addEventListener("click", e => {
   if (e.target.classList.contains("btn-edit")) {
     const id = e.target.dataset.id;
-    window.location.href = `https://delimaginariodiscos.onrender.com/${id}`;
+    window.location.href = `/admin-edit.html?id=${id}`;
   }
 });
+
 
 
 document.addEventListener("DOMContentLoaded", async () => {
