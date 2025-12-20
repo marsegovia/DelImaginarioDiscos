@@ -54,17 +54,22 @@ export const editProduct = async (req, res) => {
     const { id } = req.params;
 
     const updatedData = {
-      banda: capitalizeWords(req.body.banda),
-      album: capitalizeWords(req.body.album),
-      pais: capitalizeWords(req.body.pais),
-      estilo: capitalizeWords(req.body.estilo),
-      sello: capitalizeWords(req.body.sello),
-      precio: Number(req.body.precio),
-      stock: Number(req.body.stock),
+      banda: req.body.banda ? capitalizeWords(req.body.banda) : undefined,
+      album: req.body.album ? capitalizeWords(req.body.album) : undefined,
+      pais: req.body.pais ? capitalizeWords(req.body.pais) : undefined,
+      estilo: req.body.estilo ? capitalizeWords(req.body.estilo) : undefined,
+      sello: req.body.sello ? capitalizeWords(req.body.sello) : undefined,
+      precio: req.body.precio ? Number(req.body.precio) : undefined,
+      stock: req.body.stock ? Number(req.body.stock) : undefined,
       updatedAt: new Date()
     };
 
-    // Si viene nueva imagen, la reemplazamos
+    // 🔥 limpiar undefined (CLAVE para Firestore)
+    Object.keys(updatedData).forEach(
+      key => updatedData[key] === undefined && delete updatedData[key]
+    );
+
+    // ✅ imagen opcional
     if (req.file) {
       updatedData.Imagen = req.file.path;
     }
@@ -75,8 +80,9 @@ export const editProduct = async (req, res) => {
       message: "Producto actualizado",
       product
     });
+
   } catch (error) {
-    console.error(error);
+    console.error("EDIT PRODUCT ERROR:", error);
     res.status(500).json({ error: "Error al editar producto" });
   }
 };
