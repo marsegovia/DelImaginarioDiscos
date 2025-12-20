@@ -14,7 +14,8 @@ body{
   border: 1px solid rgba(255, 214, 32, 0.822);
   margin-top: 100px;
   width: 300px;
-  background-color: radial-gradient(circle at top, #111 0%, #000 70%);;
+  background-color: radial-gradient(circle at top, #111 0%, #000 70%);
+  padding-top: 45px;
 }
 
 .login img{
