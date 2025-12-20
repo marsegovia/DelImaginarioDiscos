@@ -9,11 +9,11 @@
 </head>
 <body>
     <header>
-        <a href="./index.html"><img src="/images/logoBlanco.png" alt=""></a>
+        <a href="/index.html"><img src="/images/logoBlanco.png" alt=""></a>
 
         <nav class="menu">
             <ul>
-                <li><a href="./catalogo.html">Catalogo</a></li>
+                <li><a href="/catalogo.html">Catalogo</a></li>
             </ul>
         </nav>
     </header>
@@ -42,38 +42,44 @@
 
 <script src="./admin-bar.js"></script>
 
-<script>document.addEventListener("click", e => {
-  if (e.target.classList.contains("btn-edit")) {
-    const id = e.target.dataset.id;
+<script>
+const tbody = document.getElementById("productsBody");
+
+tbody.addEventListener("click", async (e) => {
+  const btn = e.target;
+  const id = btn.dataset.id;
+  const token = localStorage.getItem("adminToken");
+
+  if (!id || !token) return;
+
+  // EDITAR
+  if (btn.classList.contains("btn-edit")) {
     window.location.href = `admin-edit.html?id=${id}`;
   }
-});
-</script>
 
-<script>
-if (btn.classList.contains("btn-delete")) {
-
-  try {
-    const res = await fetch(
-      `https://delimaginariodiscos.onrender.com/products/${id}`,
-      {
-        method: "DELETE",
-        headers: {
-          "Authorization": "Bearer " + token
+  // BORRAR
+  if (btn.classList.contains("btn-delete")) {
+    try {
+      const res = await fetch(
+        `https://delimaginariodiscos.onrender.com/products/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Authorization": "Bearer " + token
+          }
         }
-      }
-    );
+      );
 
-    if (!res.ok) throw new Error();
+      if (!res.ok) throw new Error();
 
-    btn.closest("tr").remove();
-    showToast("🗑️ Producto eliminado correctamente", "success");
+      btn.closest("tr").remove();
+      showToast("🗑️ Producto eliminado correctamente", "success");
 
-  } catch {
-    showToast("❌ Error al eliminar producto", "error");
+    } catch {
+      showToast("❌ Error al eliminar producto", "error");
+    }
   }
-}
-
+});
 
 function showToast(message, type = "success") {
   const toast = document.getElementById("admin-toast");
@@ -84,7 +90,7 @@ function showToast(message, type = "success") {
     toast.classList.remove("show");
   }, 3000);
 }
+</script>
 
-  </script>
 </body>
 </html>

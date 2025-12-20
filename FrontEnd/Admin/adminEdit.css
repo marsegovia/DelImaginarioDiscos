@@ -12,6 +12,7 @@ body {
   background: radial-gradient(circle at top, #111 0%, #000 70%);
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
   color: #eaeaea;
 }
