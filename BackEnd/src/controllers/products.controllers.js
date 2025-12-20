@@ -54,11 +54,11 @@ export const editProduct = async (req, res) => {
     const { id } = req.params;
 
     const updatedData = {
-      banda: req.body.banda ? "" : undefined,
-      album: req.body.album ? "" : undefined,
-      pais: req.body.pais ? "": undefined,
-      estilo: req.body.estilo ? "" : undefined,
-      sello: req.body.sello ? "" : undefined,
+      banda: req.body.banda || undefined,
+      album: req.body.album || undefined,
+      pais: req.body.pais || undefined,
+      estilo: req.body.estilo || undefined,
+      sello: req.body.sello || undefined,
       precio: req.body.precio ? Number(req.body.precio) : undefined,
       stock: req.body.stock ? Number(req.body.stock) : undefined,
       updatedAt: new Date()
