@@ -19,6 +19,8 @@
     <header>
         <a href="./index.html"><img src="./images/logoBlanco.png" alt=""></a>
 
+        <input type="text" id="search" placeholder="Buscar producto..."/>
+
         <nav class="menu">
             <ul>
                 <li><a href="./catalogo.html">Catalogo</a></li>
@@ -69,23 +71,23 @@
     <p id="admin-msg"></p>
   </div>
 </div>
-
-
-    <div class="contact">
-        <div class="col1">
-            <h3>Redes Sociales</h3>
-            <div class="redes">
-            <a href="https://www.instagram.com/delimaginariodiscos?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img src="./images/instagram.png" alt=""></a>
-            </div>
-        </div>
-    </div>
         
     <footer>
-            <p>Contacto: info@delimaginario.com.ar</p>
+      <p>Contacto: info@delimaginario.com.ar</p>
     </footer>
     
     
     <script src="/Admin/admin-bar.js"></script>
     <script src="./funciones.js"></script>
+    <script>const search = document.getElementById("search");
+      if (search) {
+        search.addEventListener("input", e => {
+          const value = e.target.value.toLowerCase();
+          document.querySelectorAll("#productsBody tr").forEach(row => {
+            row.style.display = row.innerText.toLowerCase().includes(value) ? "" : "none";
+          });
+        });
+      }
+</script>
 </body>
 </html>

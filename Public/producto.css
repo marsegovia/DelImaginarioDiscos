@@ -1,9 +1,9 @@
 
 .producto-card {
   display: flex;
-  max-width: 950px;
+  max-width: 960px;
   margin-top: 150px;
-  margin-left: 220px;
+  margin-left: 230px;
   margin-bottom: 100px;
   gap: 80px;
 }
@@ -20,7 +20,7 @@
   margin-bottom: 20px;
   margin-top: -5px;
   text-align: left;
-  font-size: 40px;
+  font-size: 60px;
   text-shadow:
     0 0 6px rgba(255, 214, 32, 0.4),
     0 0 18px rgba(255, 214, 32, 0.2);
@@ -28,7 +28,7 @@
 
 .producto-info h2 {
     margin-bottom: 20px;
-    font-size: 30px;
+    font-size: 28px;
     font-family:Arial, Helvetica, sans-serif;
     color: white;
 }
@@ -42,4 +42,38 @@
     color: white;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 16px;
+}
+
+
+/* Responsive */
+
+@media (max-width: 728px){
+  .producto-card {
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    margin-top: 120px;
+    margin-left: 150px;
+    margin-bottom: 100px;
+    gap: 80px;
+  }
+
+.producto-img-grande {
+  width: 650px;
+  object-fit: cover;
+}
+
+.producto-info h1 {
+  font-size: 85px;
+}
+
+.producto-info h2 {
+    font-size: 48px;
+}
+
+.producto-info p {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 28px;
+}
+
 }
