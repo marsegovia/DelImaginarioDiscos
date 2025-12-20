@@ -18,10 +18,9 @@ body{
 }
 
 .login img{
-  margin-top: 10%;
   margin-bottom: 10px;
   margin-top: -90px;
-  height: 250px;
+  height: 200px;
 }
 
 #loginForm{
