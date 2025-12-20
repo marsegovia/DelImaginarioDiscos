@@ -20,6 +20,7 @@ https://delimaginariodiscos.onrender.com
 ## 🔐 Acceso Admin (demo)
 
 Se incluye un usuario de prueba para que puedas explorar el panel de administración:
+el cual se sirve desde https://delimaginariodiscos.onrender.com/login
 
 ```txt
 Email: admin@mail.com  
