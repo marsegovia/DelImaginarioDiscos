@@ -85,7 +85,7 @@
   border: none;
   border-radius: 6px;
   background: linear-gradient(90deg, #ffd700, #ffb700);
-  color: #111;
+  color: white;
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
@@ -122,13 +122,19 @@
 }
 
 .admin-view2{
-    border: 1px solid black;
+    border-left: 1px solid rgba(255, 214, 32, 0.822);
+    border-right: 1px solid rgba(255, 214, 32, 0.822);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 10px 250px 10px 250px;
+    margin: 0px 0px 10px 0px;
     padding: 20px;
-    background-color: white;
+    background-color: black;
+}
+
+tbody{
+    color: white;
+    font-size: 16px;
 }
 
 .products-table {
@@ -140,13 +146,13 @@
 .products-table th,
 .products-table td {
   padding: 12px;
-  border-bottom: 0.1px solid black;
+  border-bottom: 0.1px solid rgba(255, 214, 32, 0.822);
   text-align: left;
 }
 
 .products-table th {
-  color: black;
-  font-size: 14px;
+  color: white;
+  font-size: 18px;
 }
 
 .products-table img {
@@ -165,19 +171,22 @@
 
 .btn-edit {
   background: #3b82f6;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 .btn-delete {
   background: #ef4444;
+  font-weight: bold;
+  font-size: 14px;
 }
-
 
 .admin-toast {
   position: fixed;
   top: 20px;
   right: 20px;
-  background: #2f3338;
-  color: #fff;
+  background: white;
+  color: black;
   padding: 12px 18px;
   border-radius: 6px;
   font-size: 14px;

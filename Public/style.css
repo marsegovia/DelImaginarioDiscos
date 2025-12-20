@@ -1,10 +1,11 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: #0b0b0b;
 }
 
 header{
-  border-bottom: 0.1em solid rgba(255, 255, 255, 0.2);
+  border-bottom: 0.1em solid rgba(255, 214, 32, 0.822);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -13,6 +14,12 @@ header{
     flex-direction: row;
     justify-content: space-around;
     margin-top: 35px;
+}
+
+header img{
+    height: 250px;
+    margin-top: -100px;
+    margin-bottom: -60px;
 }
 
 .menu ul{
@@ -26,18 +33,18 @@ header{
 
 .menu a{
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 .menu li{
     margin-left: 1em;
     font-size: 1.5em;
-    font-family:'Times New Roman', Times, serif;
-    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
 }
 
 .menu a:hover{
-    color: gray;
+    color: rgba(255, 214, 32, 0.822);
 }
 
 #productos {
@@ -49,7 +56,7 @@ header{
 }
 
 p{
-    font-family: 'Times New Roman', Times, serif;
+    font-family:Arial, Helvetica, sans-serif;
     font-weight: bold;
     text-align: center;
     width: 250px;
@@ -88,6 +95,7 @@ h1{
     margin-top: 1em;
     font-size: 60px;
     font-family: medieval;
+    color:rgba(255, 214, 32, 0.822);
 }
 
 .producto {
@@ -105,25 +113,32 @@ h1{
 
 
 .ver-mas{
-    border-radius: 10px;
+    font-weight: bold;
+    border-radius: 8px;
     height: 30px;
     width: 200px;
-    font-size: 16px;
-    background-color: black;
+    font-size: 18px;
+    background: linear-gradient(135deg, #d4af37, #b8962e);
     color: white;
     cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    border-radius: 6px;
+    height: 30px;
 }
 
 .ver-mas:hover{
-    background-color: gray;
+    transform: translateY(-1px);
+    background: linear-gradient(45deg, #d4af37, #b8962e);
 }
 
-footer{
+.contact{
     background-color: black;
     width: 100%;
     color: white;
     padding: 20px 0;
     margin-top: 50px;
+    border-top: 0.1em solid rgba(255, 214, 32, 0.822);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .col1{
@@ -152,27 +167,21 @@ footer{
     margin-bottom: 20px;
 }
 
-.presentation {
+footer{
     display: flex;
     justify-content: center;
-    text-align: center;
+    background-color:rgba(255, 214, 32, 0.822);
+    height: 40px;
 }
 
-.presentation p{
-    width: 100%;
-    font-style: italic;
-}
-
-.contact p{
-    text-align: center;
+footer p{
     font-size: 20px;
     width: 100%;
-    margin-bottom: -1px;
 }
 
 @font-face {
     font-family: medieval;
-    src: url('./Devans.otf');
+    src: url('./Cinzel-Bold.otf');
 }
 
 /* carousel */
