@@ -79,15 +79,6 @@
     
     <script src="/Admin/admin-bar.js"></script>
     <script src="./funciones.js"></script>
-    <script>const search = document.getElementById("search");
-      if (search) {
-        search.addEventListener("input", e => {
-          const value = e.target.value.toLowerCase();
-          document.querySelectorAll("#productsBody tr").forEach(row => {
-            row.style.display = row.innerText.toLowerCase().includes(value) ? "" : "none";
-          });
-        });
-      }
-</script>
+    <script src="./buscador.js"></script>
 </body>
 </html>
